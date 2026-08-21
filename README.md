@@ -5,7 +5,9 @@ Install it, and every release of it, from here. The tool talks to the
 
 ```bash
 # macOS and Linux
-brew tap CO3-Tech/co3-cli && brew install co3
+brew tap CO3-Tech/co3-cli
+brew trust CO3-Tech/co3-cli    # Homebrew 6 will not load a formula from an untrusted tap
+brew install co3
 
 # Windows
 scoop bucket add co3 https://github.com/CO3-Tech/homebrew-co3-cli && scoop install co3
