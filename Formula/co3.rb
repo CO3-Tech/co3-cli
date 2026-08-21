@@ -4,7 +4,7 @@ class Co3 < Formula
   version "0.1.0"
   license "Apache-2.0"
 
-  on_darwin do
+  on_macos do
     on_arm do
       url "https://github.com/CO3-Tech/homebrew-co3-cli/releases/download/v0.1.0/co3_0.1.0_darwin-arm64.tar.gz"
       sha256 "545ea97a1c7edbf8f55e56771191956151ad2cc356cb4e90422c945a5c3730e2"
