@@ -1,41 +1,51 @@
 # co3 — command line interface for the CO3 API
 
-Install it, and every release of it, from here. The tool talks to the
-[CO3 API](https://docs.co3.tech): assets, tracking, telematic connections, tachograph files.
+Your fleet from a terminal: assets, tracking, telematic connections, tachograph files.
+Everything the [CO3 API](https://docs.co3.tech) offers is a command, with its parameters as
+flags, and output you can pipe.
 
 ```bash
-# macOS and Linux
+co3 assets list-trackable
+co3 assets get-details --assetIdentifier PLDWTEST122
+co3 tacho-files list-driver-card --last-days 7
+co3 assets list-trackable --output json | jq '.data | length'
+```
+
+## Installing
+
+**macOS and Linux**
+
+```bash
 brew tap CO3-Tech/co3-cli
-brew trust CO3-Tech/co3-cli    # Homebrew 6 will not load a formula from an untrusted tap
+brew trust CO3-Tech/co3-cli
 brew install co3
+```
 
-# Windows
-scoop bucket add co3 https://github.com/CO3-Tech/homebrew-co3-cli && scoop install co3
+Homebrew will not load a formula from a tap you have not trusted, so the middle line is not
+optional. It is a one-off, per machine. `brew upgrade co3` from then on, and tab completion
+arrives with it.
 
-# anywhere Node is already installed
+**Windows**
+
+```powershell
+scoop bucket add co3 https://github.com/CO3-Tech/homebrew-co3-cli
+scoop install co3
+```
+
+`scoop update co3` from then on.
+
+**Anywhere Node is already installed**
+
+```bash
 npm install -g co3-cli
 ```
 
-Then set up credentials once and make a call:
+The Node you install *with* is not a Node the tool then runs *on*: what npm delivers is the
+same self-contained executable as every other route. Works with `--ignore-scripts`.
 
-```bash
-co3 context create          # asks for an environment, a client id and a secret
-co3 assets list-trackable
-```
+**An archive, no package manager**
 
-Every route above installs the same executable. It carries its own runtime, so there is
-nothing to install beside it — no Node, no `node_modules`. That holds for the npm package too:
-the Node you install *with* is not a Node the tool then runs *on*.
-
-## Downloading it yourself
-
-Every [release](../../releases) carries an archive per platform and a `SHA256SUMS` file.
-
-```bash
-tar -xzf co3_<version>_darwin-arm64.tar.gz
-shasum -a 256 -c co3_<version>_SHA256SUMS
-./co3 --version
-```
+Take the one for your platform from the [latest release](../../releases/latest):
 
 | platform | archive |
 |---|---|
@@ -45,36 +55,51 @@ shasum -a 256 -c co3_<version>_SHA256SUMS
 | Linux arm64 | `co3_<version>_linux-arm64.tar.gz` |
 | Windows x86-64 | `co3_<version>_windows-x64.zip` |
 
+```bash
+tar -xzf co3_<version>_darwin-arm64.tar.gz
+shasum -a 256 -c co3_<version>_SHA256SUMS
+./co3 --version
+```
+
 On macOS, an archive taken from this page in a browser carries a quarantine flag, and these
 executables are not signed with an Apple Developer ID — so the first run is blocked. Drop the
 flag with `xattr -d com.apple.quarantine ./co3`. Homebrew and `gh` downloads never carry it.
 
-## While this repository is private
+## Your first call
 
-Nothing above works yet. Homebrew, Scoop and a plain download all fetch from this repository's
-releases, and those are only readable by people with access to it. The formula and the manifest
-here are already the ones for the current release, so the day this repository is made public,
-every command on this page starts working with nothing further to publish.
+```bash
+co3 context create          # asks for an environment, a client id and a secret
+co3 assets list-trackable
+```
 
-## What is here
+A context is a name for an environment and the credentials to use there, kept together, so no
+command can reach production carrying development credentials. Your client id and secret are
+the ones you already use against the API — nothing new to request, and no browser login.
 
-| file | what it is |
-|---|---|
-| `Formula/co3.rb` | the Homebrew formula |
-| `bucket/co3.json` | the Scoop manifest |
-| releases | the executables, one archive per platform, and their checksums |
+`co3 context create` asks for each value in turn and never echoes the secret. Pass them all as
+flags instead and it asks nothing, which is how it works in a pipeline:
 
-Both files are generated and pushed by the release pipeline in
-[CO3-Tech/co3-api-toolkit](https://github.com/CO3-Tech/co3-api-toolkit), and each carries the
-checksums of one release. A hand edit is overwritten by the next release and, until then,
-describes bytes nobody published.
+```bash
+co3 context create ci --env prod --client-id <id> --client-secret-env CO3_PROD_SECRET
+```
 
-## Documentation, and asking for help
+Mark a context read-only and every state-changing command through it is refused before
+anything is sent — worth doing on the one pointing at production:
 
-Using the CLI — contexts, commands, output formats, exit codes: the readme inside the
-[release archives](../../releases/latest), or `co3 --help`.
+```bash
+co3 context read-only prod
+```
 
-The API itself, and how to obtain a client id and secret: [docs.co3.tech](https://docs.co3.tech).
+## Learning the rest
 
-Licensed Apache-2.0. The executables redistribute other people's work as well; `LICENSE`,
-`NOTICE` and `THIRD-PARTY-NOTICES.md` travel inside every archive and every package.
+`co3 --help` lists the command groups; `co3 <group> <command> --help` describes one, with the
+parameters the API declares and the examples it publishes. The full readme travels inside every
+release archive: contexts, output formats, exit codes to branch on in a script, relative date
+windows, pagination, and where your credentials rest on disk.
+
+The API itself, and how to obtain a client id and secret: **[docs.co3.tech](https://docs.co3.tech)**.
+
+## Licence
+
+Apache-2.0. The executables carry other people's work as well — `LICENSE`, `NOTICE` and
+`THIRD-PARTY-NOTICES.md` travel inside every archive and every package.
