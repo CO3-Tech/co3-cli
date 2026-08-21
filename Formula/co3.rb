@@ -1,3 +1,4 @@
+# Generated for co3 0.1.0. Edits are overwritten by the next release.
 class Co3 < Formula
   desc "Command-line interface for the CO3 API"
   homepage "https://docs.co3.tech"
