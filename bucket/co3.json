@@ -1,0 +1,31 @@
+{
+    "version": "0.1.0",
+    "description": "Command-line interface for the CO3 API",
+    "homepage": "https://docs.co3.tech",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/CO3-Tech/homebrew-co3-cli/releases/download/v0.1.0/co3_0.1.0_windows-x64.zip",
+            "hash": "f83286e477b8f8de9dacafb94ee7c7be7195eef0a614da93d3719779d1a2673c"
+        }
+    },
+    "bin": [
+        [
+            "co3.exe",
+            "co3"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/CO3-Tech/homebrew-co3-cli"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/CO3-Tech/homebrew-co3-cli/releases/download/v$version/co3_$version_windows-x64.zip"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/CO3-Tech/homebrew-co3-cli/releases/download/v$version/co3_$version_SHA256SUMS"
+        }
+    }
+}
