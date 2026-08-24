@@ -1,13 +1,13 @@
 {
-    "##": "Generated for co3 1.0.0. Edits are overwritten by the next release.",
-    "version": "1.0.0",
+    "##": "Generated for co3 1.0.1. Edits are overwritten by the next release.",
+    "version": "1.0.1",
     "description": "Command-line interface for the CO3 API",
     "homepage": "https://docs.co3.tech",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.0/co3_1.0.0_windows-x64.zip",
-            "hash": "6709c28d3d4628d8be755f7cbdd6f3b296be925fc225e4755a53128c13d342a1"
+            "url": "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.1/co3_1.0.1_windows-x64.zip",
+            "hash": "b7f6d7157c3be1d276127c0c3a470574508faf6d7626f383d1f2f28b93d47582"
         }
     },
     "bin": [
