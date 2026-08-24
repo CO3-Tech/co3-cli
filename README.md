@@ -37,7 +37,7 @@ scoop install co3
 **Anywhere Node is already installed**
 
 ```bash
-npm install -g @co3.tech/co3
+npm install -g @co3.tech/co3-cli
 ```
 
 The Node you install *with* is not a Node the tool then runs *on*: what npm delivers is the
