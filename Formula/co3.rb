@@ -8,22 +8,22 @@ class Co3 < Formula
   on_macos do
     on_arm do
       url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.0/co3_1.0.0_darwin-arm64.tar.gz"
-      sha256 "721b7a9d6ffdc97f93f5e0e2150c8b9d104e76b7471d9b8fb4a2703edcfe1308"
+      sha256 "c8414c2a48adb0ae766b41a029f4b244d0f7a64ecb827a142839140b546fcd8d"
     end
     on_intel do
       url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.0/co3_1.0.0_darwin-x64.tar.gz"
-      sha256 "c62a507b26e98d5e7252fe6270c35e3470bc2b59db9f18a1d0f8161555cbec2e"
+      sha256 "f255c6164b594116878ff663b92c7d8acde377367941ce17ee67b5a54341d55a"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.0/co3_1.0.0_linux-arm64.tar.gz"
-      sha256 "8e935adfb081d65cc25cf869dee04682b420c7f03c3f2d4bcb966a3aab3fb199"
+      sha256 "2c1f55d3eea1bd207342ba4f01b648a7b21d7fd8f10afa736baa411f6007b2bf"
     end
     on_intel do
       url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.0/co3_1.0.0_linux-x64.tar.gz"
-      sha256 "734af3ef5c64433513d9a21bfa1a0ba478421ceadbc1e67c7494dba8b078882a"
+      sha256 "02cf6dcad86da5a7fdcd90d30ef3baa108dbeeab33425f493cda93139db92a92"
     end
   end
 
