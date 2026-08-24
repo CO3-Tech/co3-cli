@@ -16,8 +16,8 @@ co3 assets list-trackable --output json | jq '.data | length'
 **macOS and Linux**
 
 ```bash
-brew tap CO3-Tech/co3-cli
-brew trust CO3-Tech/co3-cli
+brew tap CO3-Tech/co3 https://github.com/CO3-Tech/co3-cli
+brew trust CO3-Tech/co3
 brew install co3
 ```
 
