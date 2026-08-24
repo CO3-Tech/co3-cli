@@ -28,7 +28,7 @@ arrives with it.
 **Windows**
 
 ```powershell
-scoop bucket add co3 https://github.com/CO3-Tech/homebrew-co3-cli
+scoop bucket add co3 https://github.com/CO3-Tech/co3-cli
 scoop install co3
 ```
 
