@@ -53,6 +53,8 @@ Take the one for your platform from the [latest release](../../releases/latest):
 | macOS, Intel | `co3_<version>_darwin-x64.tar.gz` |
 | Linux x86-64 | `co3_<version>_linux-x64.tar.gz` |
 | Linux arm64 | `co3_<version>_linux-arm64.tar.gz` |
+| Linux x86-64, musl (Alpine) | `co3_<version>_linux-x64-musl.tar.gz` |
+| Linux arm64, musl (Alpine) | `co3_<version>_linux-arm64-musl.tar.gz` |
 | Windows x86-64 | `co3_<version>_windows-x64.zip` |
 
 ```bash
