@@ -80,7 +80,7 @@ co3 context read-only prod
 `co3 --help` lists the command groups; `co3 <group> <command> --help` describes one, with the
 parameters the API declares and the examples it publishes.
 
-The documentation is at **[docs.co3.tech/tools](https://docs.co3.tech/tools/start-here)**:
+The documentation is at **[docs.co3.tech/tools](https://docs.co3.tech/tools)**:
 installing, contexts and where your credentials rest, output formats, exit codes to branch on in
 a script, relative date windows, pagination, and a command reference by area. It also covers
 connecting an AI client to our hosted MCP service, which reaches the same API with the same
