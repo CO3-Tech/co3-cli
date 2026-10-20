@@ -1,29 +1,29 @@
-# Generated for co3 1.0.4. Edits are overwritten by the next release.
+# Generated for co3 1.0.5. Edits are overwritten by the next release.
 class Co3 < Formula
   desc "Command-line interface for the CO3 API"
   homepage "https://docs.co3.tech"
-  version "1.0.4"
+  version "1.0.5"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.4/co3_1.0.4_darwin-arm64.tar.gz"
-      sha256 "5fbbcc0d22b95f8f4539dd92f42f76195d07deea9d03aa152f7ff0383e968642"
+      url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.5/co3_1.0.5_darwin-arm64.tar.gz"
+      sha256 "3e6b54e166cd337ec5c09d24aa4083dfc5522f0e83190e360e701b615747183f"
     end
     on_intel do
-      url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.4/co3_1.0.4_darwin-x64.tar.gz"
-      sha256 "03cce68814068aa6c81cf17ee50a68fd0ab9e5304b5249741cc8a0eb05188f76"
+      url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.5/co3_1.0.5_darwin-x64.tar.gz"
+      sha256 "bdf17103a2e4c97edaf1cb4391becd28663d4c26340522c8ba21e9e741b6e22d"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.4/co3_1.0.4_linux-arm64.tar.gz"
-      sha256 "40e831c9db31eb1d830697b5b415fc1c9c2b3012610147e49442c7ffa7cc71b3"
+      url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.5/co3_1.0.5_linux-arm64.tar.gz"
+      sha256 "f00684a1d222844b66b68ae73e0c758640112c6dfbabb092444baeb9caa41363"
     end
     on_intel do
-      url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.4/co3_1.0.4_linux-x64.tar.gz"
-      sha256 "e2c94cc3a2b53590c09b5a0c35d8147e0248c835a20694861d3b185976b7c7e5"
+      url "https://github.com/CO3-Tech/co3-cli/releases/download/v1.0.5/co3_1.0.5_linux-x64.tar.gz"
+      sha256 "ffb29bbe5f84a58c789ff0390856c7cd0805e1649299aa2c83f486d4320e50d1"
     end
   end
 
